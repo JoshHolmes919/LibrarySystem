@@ -4,13 +4,30 @@
 using namespace std;
 
 class publication {
-  int publicationID;
-  std::string keywords[5];
 public:
-  publication ();
-  publication (int ID,std::string name);
+  const int publicationISBN;
+  std::string keywords[5];
+  publication (int id, std::string name)
+  {
+    publicationISBN = id;
+    title = name;
+  }
   ~publication();
   std::string title;
-  bool borrowed;
+  std::string publisher;
+  float datePublished;
+  float wordcount;
+};
+
+class book : public publication {
+public:
+  book(std::string name, bool fict)
+  {
+    author = name;
+    fiction = fict;
+  }
+  ~book();
+  std::string author;
+  bool fiction;
 };
 #endif

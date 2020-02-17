@@ -5,6 +5,14 @@
 
 class library {
 public:
+  library();
+  ~library();
   publication publicationsList [];
+  void movePublication ()
+  {
+    //move the thing
+  }
+  std::string location;
+  int shelves;
 };
 #endif
